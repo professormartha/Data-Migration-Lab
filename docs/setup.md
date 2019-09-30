@@ -1,4 +1,4 @@
-Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acceder a la instancia que creará más adelante en la cual va a montar la carpeta compartida que va a crear con Storage Gateway.
+Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acceder a la instancia que creará más adelante en la cual va a montar la carpeta compartida que va a crear con el servicio de Storage Gateway.
 
 1. Cambie a la región de **_N. Virginia_** en la esquina superior derecha de la consola de AWS.
 2. Haga click en **_Services_** y posteriormente seleccione el servicio de [**_EC2_**](https://console.aws.amazon.com/ec2/) el cual se encuentra bajo la categoría de **_Compute_** - **_https://console.aws.amazon.com/ec2/_**.

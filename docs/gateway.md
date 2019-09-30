@@ -1,20 +1,20 @@
-1. Cambie a la región de **_Ohio_** en la esquina superior derecha de la consola de AWS.
-2. Haga click en **_Services_** y posteriormente seleccione el servicio de [**_S3_**](https://s3.console.aws.amazon.com/) el cual se encuentra bajo la categoría de **_Storage_** (https://s3.console.aws.amazon.com/).
-3. Haga click en **_+ Create bucket_**.
-4. Ingrese un nombre para su bucket en **_Bucket name_** con la siguiente nomenclatura: **_file-gateway-lab-su-nombre_** (ejemplo: **_file-gateway-lab-mariano-rivera_**).
-5. Haga click en **_Create_**.
-6. Guarde el nombre de su bucket en un editor de texto ya que lo utilizará más tarde.
-7. . Haga click en **_Services_** y después en [**_Storage Gateway_**](https://console.aws.amazon.com/storagegateway/) que se encuentra bajo la categoría de **_Storage_** (https://console.aws.amazon.com/storagegateway/).
-8. Cambie a la región de **_N. Virginia_** en la esquina superior derecha de la consola de AWS.
-9. . Haga click en **_File Shares_** en el menú lateral del lado izquierdo.
-10. Haga click en **_Create file share_**.
-11. En el campo de **_Amazon S3 bucket name_** ingrese el nombre del bucket de S3 que creó anteriormente.
-12. En el menú desplegable de **_Gateway_** seleccione el Gateway que creó anteriormente.
-13. Haga click en **_Next_**.
-14. En la pantalla de **_Configure how files are stored in Amazon S3_** haga click en **_Next_** (usará los valores predeterminados).
-15. En la pantalla de **_Review_** haga click en **_Create file share_**.
-16. Haga click en **_File Shares_** en el menú lateral del lado izquierdo.
-17. Seleccione la casilla del share que acaba de crear.
-18. Copie las instrucciones para conectarse a su file share desde una máquina **_Linux_** y guárdelas en un editor de texto ya que las utilizará más adelante.
+1. Haga click en **_Services_** y después en **_Storage Gateway_** que se encuentra bajo la categoría de [**_Storage_**](https://console.aws.amazon.com/storagegateway/) (**_https://console.aws.amazon.com/storagegateway/_**).
+2. Haga click en **_Get Started_** o **_Create Gateway_** según sea el caso.
+3. En **_Select gateway type_** seleccione **_File Gateway_** y haga click en **_Next_**.
+4. En **_Select host platform_** seleccione **_Amazon EC2_** y haga click en **_Next_**.
+5. En **_Service endpoint_** seleccione **_Public_** y haga click en **_Next_**.
+6. En **_Connect to gateway_** ingrese la IP de **_StorageGatewayPublicIp_** en el campo de **_IP address_**y haga click en **_Next_**.
+7. En Activate Gateway seleccione la zona horaria de su localidad en el menú desplegable de Gateway time zone.
+8. Ingrese un nombre para su Gateway (ejemplo: **_File Gateway Lab_**) en el campo de **_Gateway name_**.
+9. Haga click en **_Activate Gateway_**.
+10. Haga click en **_Exit_**.
+11. Haga click en **_Gateways_** en el menú lateral del lado **_izquierda_**.
+12. Seleccione la casilla del **_Gateway_** que acaba de crear y asegúrese que el status de su Gateway sea **_Running_** (con un signo de exclamación a un lado).
+13.	Haga click en **_Edit local disks_**.
 
-![Outputs](images/onlinux.png)
+![Edit local disks](images/editlocaldisks.png)
+
+14.	Elija **_Cache_** del menú desplegable de **_Allocated to_**.
+15.	Haga click en **_Save_**.
+
+![Cache](images/cache.png)
