@@ -1,0 +1,71 @@
+# Project information
+
+site_name: AWS Storage Gateway Lab
+site_description: 'En este lab'
+#site_author: 'josepenu@amazon.com'
+site_url: 'http://storage-gateway.oldschool.cloud'
+
+# Repository
+#repo_name: 'Storage-Gateway-Lab'
+repo_url: 'https://github.com/josemp-git/Storage-Gateway-Lab'
+
+google_analytics: ['UA-147241276-3', 'storage-gateway.oldschool.cloud']
+
+# Copyright
+copyright: '&copy; 2019 - José Peñúñuri '
+
+extra:
+  social:
+    - type: 'home'
+      link: 'http://storage-gateway.oldschool.cloud'
+    - type: 'twitter'
+      link: 'https://twitter.com/jose_penunuri'
+
+nav:
+    - Inicio: index.md
+    - 1. Preparación del ambiente: setup.md
+    - 2. Creación de File Gateway: gateway.md
+    - 3. Creación de File Share: fileshare.md
+    - 4. Montar File Share en Linux: mount.md
+theme:
+  name: 'material'
+  palette:
+    primary: 'Red'
+    accent: 'Black'
+  logo:
+    icon: 'cloud_done'
+markdown_extensions:
+  - codehilite:
+      linenums: true
+  - admonition
+  - markdown.extensions.admonition
+  - markdown.extensions.sane_lists
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.def_list
+  - markdown.extensions.abbr
+  - markdown.extensions.tables
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.toc:
+      permalink: True
+      separator: "_"
+  - pymdownx.extra
+  - pymdownx.arithmatex
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - pyembed.markdown
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
