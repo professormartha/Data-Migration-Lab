@@ -4,7 +4,7 @@
 4. Ingrese un nombre para su bucket en **_Bucket name_** con la siguiente nomenclatura: **_file-gateway-lab-su-nombre_** (ejemplo: **_file-gateway-lab-mariano-rivera_**).
 5. Haga click en **_Create_**.
 6. Guarde el nombre de su bucket en un editor de texto ya que lo utilizará más tarde.
-7. . Haga click en **_Services_** y después en [**_Storage Gateway_**](https://console.aws.amazon.com/storagegateway/) que se encuentra bajo la categoría de **_Storage_** (https://console.aws.amazon.com/storagegateway/).
+7.Haga click en **_Services_** y después en [**_Storage Gateway_**](https://console.aws.amazon.com/storagegateway/) que se encuentra bajo la categoría de **_Storage_** (**_https://console.aws.amazon.com/storagegateway/_**).
 8. Cambie a la región de **_N. Virginia_** en la esquina superior derecha de la consola de AWS.
 9. . Haga click en **_File Shares_** en el menú lateral del lado izquierdo.
 10. Haga click en **_Create file share_**.
