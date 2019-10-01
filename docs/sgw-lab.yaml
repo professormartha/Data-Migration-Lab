@@ -20,8 +20,8 @@ Resources:
             #!/bin/bash -xe 
             yum update -y
             cd /home/ec2-user/
-            wget https://awsimmersiondays.s3.amazonaws.com/baseballdata.zip
-            unzip baseballdata.zip
+            wget https://awsimmersiondays.s3.amazonaws.com/baseballdatabank-2019.2.zip
+            unzip baseballdatabank-2019.2.zip
   SGWEC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
