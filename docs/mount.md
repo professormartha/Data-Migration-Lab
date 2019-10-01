@@ -12,7 +12,7 @@
 
 **_*Nota_**. Si por alguna razón no pudo conectarse a la instancia por medio de SSH via el navegador web (500 Server error), intente la opción de A standalone SSH client siguiendo las instrucciones que ahí se indican (terminal para usuarios Mac/Linux, putty para usuarios Windows).
 
-7. Ejecute el siguientes comando para obtener privilegio root:
+7. Ejecute el siguiente comando para obtener privilegio root:
 
 ```
 sudo su
@@ -24,7 +24,7 @@ sudo su
 mkdir gateway
 ```
 
-9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. Deberá quedar algo así:
+9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. El comando deberá quedar algo así:
 
 > mount -t nfs -o nolock,hard 172.31.34.218:/file-gateway-lab-su-bucket /home/ec2-user/gateway
 
