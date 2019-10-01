@@ -18,19 +18,20 @@
 sudo su
 ```
 
+8. Para montar su file share debe crear un directorio en donde montarlo. Ejecute el siguiente comando:
 ```
-mkdir Gateway
+mkdir gateway
 ```
 8. Dentro del directorio en el que se encuentra hay un archivo llamado **_baseballdatabank-2019.2.zip_** que contiene archivos .csv con estadísticas de baseball. Descomprima este archivo con el siguiente comando:
 ```
 unzip baseballdatabank-2019.2.zip
 ```
 
-9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/Gateway_**. Deberá quedar algo así:
+9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. Deberá quedar algo así:
 
 > mount -t nfs -o nolock,hard 172.31.34.218:/file-gateway-lab-su-bucket /home/ec2-user/gateway
 
-9. Ejecute el siguiente comando para copiar los archivos que descomprimió en el paso 8 al file share de su Storage Gateway:
+9. Ejecute el siguiente comando para copiar los archivos que descomprimió en el paso 8 al file share que acaba de montar:
 
 ```
 cp -rv /home/ec2-user/baseballdatabank-2019.2/* /home/ec2-user/gateway/
