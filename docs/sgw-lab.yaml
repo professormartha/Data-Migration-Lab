@@ -1,0 +1,103 @@
+Parameters:
+  KeyPair:
+    Description: Select an existing EC2 key pair.
+    Type: AWS::EC2::KeyPair::KeyName
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0b898040803850657
+      SecurityGroups: 
+        - !Ref MySecurityGroup
+      Tags:
+        - Key: "Name"
+          Value: "Amazon Linux 2 - SGW Lab"
+      KeyName: !Ref KeyPair
+      UserData:
+        'Fn::Base64': 
+          !Sub |
+            #!/bin/bash -xe 
+            yum update -y    
+            wget https://awsimmersiondays.s3.amazonaws.com/baseballdatabank-2019.2.zip
+  SGWEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.medium
+      ImageId: ami-07b2e2e6e4586930d
+      SecurityGroups: 
+        - !Ref StorageGatewaySecurityGroup
+      Tags:
+        - Key: "Name"
+          Value: "Storage Gateway - File"
+  NewVolume:
+    Type: AWS::EC2::Volume
+    Properties:
+      Size: 150
+      AvailabilityZone: !GetAtt SGWEC2Instance.AvailabilityZone
+      Tags:
+        - Key: Name
+          Value: Cache volume
+  MountPoint:
+    Type: AWS::EC2::VolumeAttachment
+    Properties:
+      InstanceId: !Ref SGWEC2Instance
+      VolumeId: !Ref NewVolume
+      Device: /dev/sdb
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22, http and NFS ports
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+  StorageGatewaySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '2049'
+          ToPort: '2049'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '111'
+          ToPort: '111'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '20048'
+          ToPort: '20048'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: udp
+          FromPort: '2049'
+          ToPort: '2049'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: udp
+          FromPort: '111'
+          ToPort: '111'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: udp
+          FromPort: '20048'
+          ToPort: '20048'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '445'
+          ToPort: '445'
+          CidrIp: 0.0.0.0/0
+Outputs:
+  EC2InstancePublicIp:
+    Description: EC2 Instance Public IP
+    Value: !GetAtt Ec2Instance.PublicIp
+  StorageGatewayPublicIp:
+    Description: Storage Gateway Public IP
+    Value: !GetAtt SGWEC2Instance.PublicIp
