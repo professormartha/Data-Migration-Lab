@@ -22,9 +22,9 @@ sudo su
 ```
 mkdir gateway
 ```
-8. Dentro del directorio en el que se encuentra hay un archivo llamado **_baseballdatabank-2019.2.zip_** que contiene archivos .csv con estadísticas de baseball. Descomprima este archivo con el siguiente comando:
+8. Dentro del directorio en el que se encuentra hay un archivo llamado **_baseballstats.zip_** que contiene archivos .csv con estadísticas de baseball. Descomprima este archivo con el siguiente comando:
 ```
-unzip baseballdatabank-2019.2.zip
+unzip baseballstats.zip
 ```
 
 9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. Deberá quedar algo así:
@@ -34,7 +34,7 @@ unzip baseballdatabank-2019.2.zip
 9. Ejecute el siguiente comando para copiar los archivos que descomprimió en el paso 8 al file share que acaba de montar:
 
 ```
-cp -rv /home/ec2-user/baseballdatabank-2019.2/* /home/ec2-user/gateway/
+cp -rv /home/ec2-user/baseballstats/* /home/ec2-user/gateway/
 ```
 
 10.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
