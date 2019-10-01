@@ -19,24 +19,27 @@ sudo su
 ```
 
 8. Para montar su file share debe crear un directorio en donde montarlo. Ejecute el siguiente comando:
+
 ```
 mkdir gateway
 ```
-8. Dentro del directorio en el que se encuentra hay un archivo llamado **_baseballstats.zip_** que contiene archivos .csv con estadísticas de baseball. Descomprima este archivo con el siguiente comando:
+
+9. Dentro del directorio en el que se encuentra hay un archivo llamado **_baseballstats.zip_** que contiene archivos .csv con estadísticas de baseball. Descomprima este archivo con el siguiente comando:
+
 ```
 unzip baseballstats.zip
 ```
 
-9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. Deberá quedar algo así:
+10. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. Deberá quedar algo así:
 
 > mount -t nfs -o nolock,hard 172.31.34.218:/file-gateway-lab-su-bucket /home/ec2-user/gateway
 
-9. Ejecute el siguiente comando para copiar los archivos que descomprimió en el paso 8 al file share que acaba de montar:
+11. Ejecute el siguiente comando para copiar los archivos que descomprimió al file share que acaba de montar:
 
 ```
 cp -rv /home/ec2-user/baseballstats/* /home/ec2-user/gateway/
 ```
 
-10.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
-11.	Ingrese al bucket que creó para este laboratorio.
-12.	Verifique que los archivos que copió se encuentran en el bucket.
+12.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
+13.	Ingrese al bucket que creó para este laboratorio.
+14.	Verifique que los archivos que copió se encuentran en el bucket.
