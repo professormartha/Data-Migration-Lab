@@ -18,8 +18,10 @@ Resources:
         'Fn::Base64': 
           !Sub |
             #!/bin/bash -xe 
-            yum update -y    
-            wget https://awsimmersiondays.s3.amazonaws.com/baseballdatabank-2019.2.zip /home/ec2-user/baseballstats.zip
+            yum update -y
+            cd /home/ec2-user/
+            wget https://awsimmersiondays.s3.amazonaws.com/baseballdata.zip
+            unzip baseballdata.zip
   SGWEC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:

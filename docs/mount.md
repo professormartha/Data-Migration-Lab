@@ -12,7 +12,7 @@
 
 **_*Nota_**. Si por alguna razón no pudo conectarse a la instancia por medio de SSH via el navegador web (500 Server error), intente la opción de A standalone SSH client siguiendo las instrucciones que ahí se indican (terminal para usuarios Mac/Linux, putty para usuarios Windows).
 
-7. Ejecute  siguientes comandos:
+7. Ejecute el siguientes comando para obtener privilegio root:
 
 ```
 sudo su
@@ -24,22 +24,16 @@ sudo su
 mkdir gateway
 ```
 
-9. Dentro del directorio en el que se encuentra hay un archivo llamado **_baseballstats.zip_** que contiene archivos .csv con estadísticas de baseball. Descomprima este archivo con el siguiente comando:
-
-```
-unzip baseballstats.zip
-```
-
-10. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. Deberá quedar algo así:
+9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. Deberá quedar algo así:
 
 > mount -t nfs -o nolock,hard 172.31.34.218:/file-gateway-lab-su-bucket /home/ec2-user/gateway
 
-11. Ejecute el siguiente comando para copiar los archivos que descomprimió al file share que acaba de montar:
+10. Dentro del directorio en el que se encuentra hay un directorio llamado **_baseballdata_** que contiene archivos .csv con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al file share que acaba de montar:
 
 ```
-cp -rv /home/ec2-user/baseballstats/* /home/ec2-user/gateway/
+cp -rv /home/ec2-user/baseballdata/* /home/ec2-user/gateway/
 ```
 
 12.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
 13.	Ingrese al bucket que creó para este laboratorio.
-14.	Verifique que los archivos que copió se encuentran en el bucket.
+13.	Verifique que los archivos que copió se encuentran en el bucket.
