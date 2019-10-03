@@ -10,7 +10,7 @@
 10. Haga click en **_Exit_**.
 11. Haga click en **_Gateways_** en el menú lateral del lado izquierdo.
 12. Seleccione la casilla del **_Gateway_** que acaba de crear y asegúrese que el status de su Gateway sea **_Running_** (con un signo de exclamación a un lado).
-13.	Haga click en **_Edit local disks_**.
+13.	Haga click en **_Edit local disks_** (para ejecutar este paso probablemente tenga que esperar unos minutos a que el gateway termine de crearse por completo).
 
 ![Edit local disks](images/editlocaldisks.png)
 
