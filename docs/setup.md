@@ -6,7 +6,7 @@ Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acce
 4. En el campo de **_Key pair name_** ingrese un nombre para su key pair (ejemplo: **_sgw-lab_**).
 5. Haga click en **_Create_** y guarde el archivo que se va a descargar.
 
-A continuación, va a desplegar una plantilla de CloudFormation que instalará una instancia de Amazon Linux 2, aplicará las actualizaciones de sistema operativo correspondientes y configurar un security group con el puerto 22 (ssh) habilitado. En esta instancia es donde va a montar los file shares creados con el servicio de Storage Gateway. Esta plantilla también deplegará la instancia que utilizará como Storage Gateway y configurará el security group correspondiente para servicios NFS y SMB. Para desplegar dicha plantilla siga los siguientes pasos:
+A continuación, va a desplegar una plantilla de CloudFormation que instalará una instancia de Amazon Linux 2, aplicará las actualizaciones de sistema operativo correspondientes y configurará un security group con el puerto 22 (ssh) habilitado. En esta instancia es donde va a montar el file shares que creará con el servicio de Storage Gateway. Esta plantilla también deplegará la instancia que utilizará como Storage Gateway y configurará el security group correspondiente con los servicios de HTTP, NFS y SMB habilitados. Para desplegar dicha plantilla siga los siguientes pasos:
 
 6. Haga click en **_Services_** y después en **_CloudFormation_** que se encuentra bajo la categoría de **_Management & Governance_** (también puede teclear CloudFormation en el campo de búsqueda).
 7. Haga click en **_Create stack_**.
