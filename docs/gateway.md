@@ -1,4 +1,4 @@
-1. Haga click en **_Services_** y después en **_Storage Gateway_** que se encuentra bajo la categoría de [**_Storage_**](https://console.aws.amazon.com/storagegateway/) (**_https://console.aws.amazon.com/storagegateway/_**).
+1. Haga click en **_Services_** y después en [**_Storage Gateway_**](https://console.aws.amazon.com/storagegateway/) que se encuentra bajo la categoría de **_Storage_** - **_https://console.aws.amazon.com/storagegateway/_**.
 2. Haga click en **_Get Started_** o **_Create Gateway_** según sea el caso.
 3. En **_Select gateway type_** seleccione **_File Gateway_** y haga click en **_Next_**.
 4. En **_Select host platform_** seleccione **_Amazon EC2_** y haga click en **_Next_**.
