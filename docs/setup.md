@@ -15,7 +15,11 @@ A continuación, va a desplegar una plantilla de CloudFormation. Esta plantilla 
 8. Haga click en **_Services_** y después en [**_CloudFormation_**](https://console.aws.amazon.com/cloudformation/) que se encuentra bajo la categoría de **_Management & Governance_** (también puede teclear CloudFormation en el campo de búsqueda) - **_https://console.aws.amazon.com/cloudformation/_**.
 9. Haga click en **_Create stack_**.
 10.	En el campo de **_Amazon S3 URL_** ingrese la siguiente URL: 
->http://storage-gateway.oldschool.cloud/sgw-lab.yaml
+
+```
+http://storage-gateway.oldschool.cloud/sgw-lab.yaml
+```
+
 11.	Haga click en **_Next_**.
 12.	En el campo de **_Stack name_** escriba **_StorageGatewayLab_**.
 13.	En el menú desplegable de **_KeyPair_** bajo la sección de **_Parameters_** elija el key pair que creó anteriormente (**_sgw_**).
