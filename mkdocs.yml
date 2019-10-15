@@ -1,15 +1,15 @@
 # Project information
 
-site_name: AWS Storage Gateway Lab
-site_description: 'En este lab'
+site_name: AWS Data Migration Lab
+site_description: 'AWS Data Migration Lab'
 #site_author: 'josepenu@amazon.com'
-site_url: 'http://storage-gateway.oldschool.cloud'
+site_url: 'http://data-migration.oldschool.cloud'
 
 # Repository
 #repo_name: 'Storage-Gateway-Lab'
-repo_url: 'https://github.com/josemp-git/Storage-Gateway-Lab'
+repo_url: 'https://github.com/josemp-git/data-migration-Lab'
 
-google_analytics: ['UA-147241276-3', 'storage-gateway.oldschool.cloud']
+google_analytics: ['UA-147241276-3', 'data-migration.oldschool.cloud']
 
 # Copyright
 copyright: '&copy; 2019 - José Peñúñuri '
@@ -17,16 +17,21 @@ copyright: '&copy; 2019 - José Peñúñuri '
 extra:
   social:
     - type: 'home'
-      link: 'http://storage-gateway.oldschool.cloud'
+      link: 'http://data-migration.oldschool.cloud'
     - type: 'twitter'
       link: 'https://twitter.com/jose_penunuri'
 
 nav:
     - Inicio: index.md
-    - 1. Preparación del ambiente: setup.md
-    - 2. Creación de File Gateway: gateway.md
-    - 3. Creación de File Share: fileshare.md
-    - 4. Montar File Share en Linux: mount.md
+    - Preparación del ambiente: setup.md
+    - AWS DataSync:
+      - Agente DataSync: datasyncagent.md
+      - Tarea de migración: task.md
+      - Migrar datos: migration.md
+    - AWS Storage Gateway:
+      - Creación de File Gateway: gateway.md
+      - Creación de File Share: fileshare.md
+      - Montar File Share en Linux: mount.md
 theme:
   name: 'material'
   palette:
