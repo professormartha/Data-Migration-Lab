@@ -48,7 +48,7 @@ A continuación, debe crear un bucket de S3 que nos servirá para almacenar la i
 28. Haga click en **_Connect_**.
 29. Seleccione **_EC2 Instance Connect (browser-based SSH connection)_** y haga click en **_Connect_** para tener acceso a la instancia cliente vía SSH por medio del navegador web.
 
-![Connect to Linux Server](images/connect2.png)
+![Connect to Linux Server](images/connect.png)
 ![EC2 CLI](images/ec2cli.png)
 
 **_*Nota._** Si por alguna razón no pudo conectarse a la instancia por medio de SSH via el navegador web (500 Server error), intente la opción de A standalone SSH client siguiendo las instrucciones que ahí se indican (terminal para usuarios Mac/Linux, putty para usuarios Windows).
@@ -73,6 +73,6 @@ Para enlistar el contenido
 ls
 ```
 
-En esta carpeta encontrará información histórica con estadísticas de baseball de los últimos 20 años la cual migrará al servicio de S3 utilizando DataSync.
+En esta carpeta compartida encontrará información histórica con estadísticas de baseball de los últimos 20 años la cual migrará al servicio de S3 utilizando DataSync y podrá acceder con el servicio de Storage Gateway.
 
 ![EC2 CLI](images/explorenfs.png)
