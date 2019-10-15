@@ -39,3 +39,40 @@ A continuación, debe crear un bucket de S3 que nos servirá para almacenar la i
 22. Ingrese un nombre para su bucket en **_Bucket name_** con la siguiente nomenclatura: **_data-migration-lab-su-nombre_** (ejemplo: **_data-migration-lab-mariano-rivera_**).
 23. Haga click en **_Create_**.
 24. Guarde el nombre de su bucket en un editor de texto ya que lo utilizará más tarde.
+
+
+
+25. Haga click en **_Services_** y posteriormente seleccione el servicio de **_EC2_** el cual se encuentra bajo la categoría de **_Compute_**.
+26. Haga click en **_Running instances_**.
+27. Seleccione la casilla que se encuentra a lado de la instancia **_Linux Server_**.
+28. Haga click en **_Connect_**.
+29. Seleccione **_EC2 Instance Connect (browser-based SSH connection)_** y haga click en **_Connect_** para tener acceso a la instancia cliente vía SSH por medio del navegador web.
+
+![Connect to Linux Server](images/connect2.png)
+![EC2 CLI](images/ec2cli.png)
+
+**_*Nota._** Si por alguna razón no pudo conectarse a la instancia por medio de SSH via el navegador web (500 Server error), intente la opción de A standalone SSH client siguiendo las instrucciones que ahí se indican (terminal para usuarios Mac/Linux, putty para usuarios Windows).
+
+30. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **_NFSInstancePrivateIP_** por la dirección IP correspondiente que guardó en el editor de texto:
+
+```
+sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs /home/ec2-user/nas
+```
+
+Este comando va a montar una carpeta compartida por la instancia que funge como servidor NFS.
+
+31. Proceda a explorar el contenido de esta carpeta con los siguientes comandos:
+
+Para acceder a la carpeta
+```
+cd /home/ec2-user/nas
+```
+
+Para enlistar el contenido
+```
+ls
+```
+
+En esta carpeta encontrará información histórica con estadísticas de baseball de los últimos 20 años la cual migrará al servicio de S3 utilizando DataSync.
+
+![EC2 CLI](images/explorenfs.png)
