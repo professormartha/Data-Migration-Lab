@@ -50,7 +50,7 @@ En los siguientes pasos creará un bucket de S3 en donde almacenará la informac
 
 19. Haga click en **_Services_** y posteriormente seleccione el servicio de [**_S3_**](https://s3.console.aws.amazon.com/) el cual se encuentra bajo la categoría de **_Storage_** (**_https://s3.console.aws.amazon.com/_**).
 20. Haga click en **_+ Create bucket_**.
-21. Ingrese un nombre para su bucket en **_Bucket name_** con la siguiente nomenclatura: 
+21. Ingrese un nombre para su bucket en el campo de **_Bucket name_** con la siguiente nomenclatura: 
 **_data-migration-lab-su-nombre_** (ejemplo: **_data-migration-lab-mariano-rivera_**).
 22. En el menú desplegable de **_Region_** seleccione **_US East (Ohio)_**.
 23. Haga click en **_Create_**.
