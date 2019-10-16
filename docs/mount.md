@@ -28,7 +28,7 @@ mkdir /home/ec2-user/gateway
 
 > mount -t nfs -o nolock,hard 172.31.34.218:/file-gateway-lab-su-bucket /home/ec2-user/gateway
 
-10. Lance el siguiente comando para explorar el contenido de la carpeta compartida que acaba de montar (si llevó a cabo los módulos de DataSync encontrará los archivos que migró anteriormente):
+10. Ejecute el siguiente comando para enlistar el contenido de la carpeta compartida que acaba de montar (si llevó a cabo el laboratorio de DataSync encontrará los archivos que migró anteriormente):
 
 ```
 ls /home/ec2-user/gateway
@@ -42,4 +42,4 @@ cp -rv /home/ec2-user/baseball-data-2018/ /home/ec2-user/gateway/
 
 12.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
 13.	Ingrese al bucket que creó para este laboratorio.
-13.	Verifique que el directorio  que copió se encuentra en el bucket.
+13.	Verifique que el directorio que copió se encuentra en el bucket.
