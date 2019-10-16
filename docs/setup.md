@@ -29,7 +29,7 @@ A continuación, desplegará una plantilla de CloudFormation que creará las sig
 10.	En el campo de **_Amazon S3 URL_** ingrese la siguiente URL: 
 
 ```
-http://data-migration.oldschool.cloud/data-migration-lab.yaml
+https://s3.amazonaws.com/data-migration.oldschool.cloud/data-migration-lab.yaml
 ```
 
 11.	Haga click en **_Next_**.
