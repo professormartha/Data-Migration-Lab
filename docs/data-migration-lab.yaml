@@ -1,0 +1,158 @@
+Parameters:
+  KeyPair:
+    Description: Select an existing EC2 key pair.
+    Type: AWS::EC2::KeyPair::KeyName
+Resources:
+  DataSyncAgent:
+      Type: 'AWS::EC2::Instance'
+      Properties:
+        InstanceType: t2.large
+        ImageId: ami-08060db92d824f291
+        SecurityGroups: 
+          - !Ref DataSyncSecurityGroup
+        Tags:
+          - Key: "Name"
+            Value: "DataSync Agent"
+  NFSInstance:
+      Type: 'AWS::EC2::Instance'
+      Properties:
+        AvailabilityZone: !GetAtt DataSyncAgent.AvailabilityZone
+        InstanceType: t2.micro
+        ImageId: ami-0b898040803850657
+        SecurityGroups: 
+          - !Ref StorageGatewaySecurityGroup
+        Tags:
+          - Key: "Name"
+            Value: "NFS Server"
+        KeyName: !Ref KeyPair
+        UserData:
+          'Fn::Base64': 
+            !Sub |
+              #!/bin/bash -xe 
+              yum update -y
+              service nfs start
+              echo "/mnt/nfs *(rw,sync,no_subtree_check,no_root_squash)" >> /etc/exports
+              cd /
+              mkdir /mnt/nfs
+              cd /mnt/nfs
+              chmod 777 /mnt/nfs
+              wget https://awsimmersiondays.s3.amazonaws.com/migration/baseball-data.zip
+              unzip baseball-data.zip
+              rm baseball-data.zip
+              rm -rf __MACOSX
+              exportfs -a
+              service nfs restart
+  ClientInstance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      AvailabilityZone: !GetAtt DataSyncAgent.AvailabilityZone
+      InstanceType: t2.micro
+      ImageId: ami-0b898040803850657
+      SecurityGroups: 
+        - !Ref MySecurityGroup
+      Tags:
+        - Key: "Name"
+          Value: "Client Instance"
+      KeyName: !Ref KeyPair
+      UserData:
+        'Fn::Base64': 
+          !Sub |
+            #!/bin/bash -xe 
+            yum update -y
+            cd /home/ec2-user/
+            mkdir nas
+            mkdir baseball-data-2018
+            wget https://awsimmersiondays.s3.amazonaws.com/baseballdatabank-2019.2.zip
+            unzip baseballdatabank-2019.2.zip
+            mv /home/ec2-user/baseballdatabank-2019.2/core/* /home/ec2-user/baseball-data-2018
+            rm -rf /home/ec2-user/baseballdatabank-2019.2            
+  SGWEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.medium
+      ImageId: ami-07b2e2e6e4586930d
+      SecurityGroups: 
+        - !Ref StorageGatewaySecurityGroup
+      Tags:
+        - Key: "Name"
+          Value: "Storage Gateway - File"
+  NewVolume:
+    Type: AWS::EC2::Volume
+    Properties:
+      Size: 150
+      AvailabilityZone: !GetAtt SGWEC2Instance.AvailabilityZone
+      Tags:
+        - Key: Name
+          Value: Cache volume
+  MountPoint:
+    Type: AWS::EC2::VolumeAttachment
+    Properties:
+      InstanceId: !Ref SGWEC2Instance
+      VolumeId: !Ref NewVolume
+      Device: /dev/sdb
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable HTTP access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+  DataSyncSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable HTTP access via port 80
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 0.0.0.0/0
+  StorageGatewaySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22, http and NFS ports
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '2049'
+          ToPort: '2049'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '111'
+          ToPort: '111'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '20048'
+          ToPort: '20048'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '445'
+          ToPort: '445'
+          CidrIp: 0.0.0.0/0
+Outputs:
+  ClientInstancePublicIP:
+    Description: Client Instance Public IP
+    Value: !GetAtt ClientInstance.PublicIp
+  StorageGatewayPublicIP:
+    Description: Storage Gateway Public IP
+    Value: !GetAtt SGWEC2Instance.PublicIp
+  StorageGatewayPrivateIP:
+    Description: Storage Gateway Private IP
+    Value: !GetAtt SGWEC2Instance.PrivateIp
+  DataSyncAgentIP:
+    Description: DataSync Agent IP
+    Value: !GetAtt DataSyncAgent.PublicIp
+  NFSInstancePublicIP:
+    Description: NFS Instance Public IP
+    Value: !GetAtt NFSInstance.PublicIp
+  NFSInstancePrivateIP:
+    Description: NFS Instance Public IP
+    Value: !GetAtt NFSInstance.PrivateIp

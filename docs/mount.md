@@ -24,19 +24,35 @@ sudo su
 mkdir /home/ec2-user/gateway
 ```
 
-9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. El comando deberá quedar algo así:
-10. Ejecute el siguiente comando para enlistar el contenido de la carpeta compartida que acaba de montar (si llevó a cabo el laboratorio de DataSync encontrará los archivos que migró anteriormente):
+9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por la siguiente ruta:
+
+```
+/home/ec2-user/gateway
+```
+
+10. También puede montar el file share ejecutando el siguiente comando y sutituyendo **_StorageGatewayPrivateIP_** por la dirección IP que guardó en el editor de texto:
+
+```
+mount -t nfs -o nolock,hard StorageGatewayPrivateIP:/data-migration-lab-mariano-rivera /home/ec2-user/gateway
+```
+11. Ejecute el siguiente comando para enlistar el contenido de la carpeta compartida que acaba de montar (si llevó a cabo el laboratorio de DataSync encontrará los archivos que migró anteriormente):
 
 ```
 ls /home/ec2-user/gateway
 ```
 
-11. Dentro de la ruta en la que se encuentra hay un directorio llamado **baseball-data-2018** que contiene archivos .csv con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al file share que acaba de montar:
+12. Dentro de la ruta en la que se encuentra hay un directorio llamado **baseball-data-2018** que contiene archivos .csv con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al file share que acaba de montar:
 
 ```
 cp -rv /home/ec2-user/baseball-data-2018/ /home/ec2-user/gateway/
 ```
 
-12.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
-13.	Ingrese al bucket que creó para este laboratorio.
-13.	Verifique que el directorio que copió se encuentra en el bucket.
+13. Ejecute de nuevo el comando **_ls /home/ec2-user/gateway_** para corroborar que el directorio **baseball-data-2018** se copió correctamente al file share.
+
+![Transfered data CLI](images/transfereddatacli.png)
+
+14.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
+15.	Ingrese al bucket que creó para este laboratorio.
+16.	Verifique que el directorio que copió se encuentra en el bucket.
+
+![Transfered data S3](images/transfereddatas3.png)

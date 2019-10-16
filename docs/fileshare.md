@@ -3,12 +3,16 @@
 3. Haga click en **_File Shares_** en el menú lateral del lado izquierdo.
 4. Haga click en **_Create file share_**.
 5. En el campo de **_Amazon S3 bucket name_** ingrese el nombre del bucket de S3 que creó para este laboratorio.
-6. En el menú desplegable de **_Gateway_** seleccione el Gateway que creó anteriormente.
-7. Haga click en **_Next_**.
-8. En la pantalla de **_Configure how files are stored in Amazon S3_** haga click en **_Next_** (usará los valores predeterminados).
-9. En la pantalla de **_Review_** haga click en **_Create file share_**.
-10. Haga click en **_File Shares_** en el menú lateral del lado izquierdo.
-11. Seleccione la casilla del share que acaba de crear.
-12. Copie las instrucciones para conectarse a su file share desde una máquina **_Linux_** y guárdelas en un editor de texto ya que las utilizará más adelante.
+6. En la opción de **_Access objects using_** seleccione **_Network File System (NFS)_**.
+7. En el menú desplegable de **_Gateway_** seleccione el Gateway que creó anteriormente.
+
+![File Share Settings](images/filesharesettings.png)
+
+8. Haga click en **_Next_**.
+9. En la pantalla de **_Configure how files are stored in Amazon S3_** haga click en **_Next_** (usará los valores predeterminados).
+10. En la pantalla de **_Review_** haga click en **_Create file share_**.
+11. Haga click en **_File Shares_** en el menú lateral del lado izquierdo.
+12. Seleccione la casilla del share que acaba de crear.
+13. Copie las instrucciones para conectarse a su file share desde una máquina **_Linux_** y guárdelas en un editor de texto ya que las utilizará más adelante.
 
 ![Outputs](images/onlinux.png)
