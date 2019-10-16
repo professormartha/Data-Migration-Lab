@@ -48,29 +48,32 @@ http://data-migration.oldschool.cloud/data-migration-lab.yaml
 
 En los siguientes pasos creará un bucket de S3 en donde almacenará la información que migre utilizando los servicios de DataSync y Storage Gateway.
 
-19. Cambie a la región de **_Ohio_** en la esquina superior derecha de la consola de AWS.
-20. Haga click en **_Services_** y posteriormente seleccione el servicio de [**_S3_**](https://s3.console.aws.amazon.com/) el cual se encuentra bajo la categoría de **_Storage_** (**_https://s3.console.aws.amazon.com/_**).
-21. Haga click en **_+ Create bucket_**.
-22. Ingrese un nombre para su bucket en **_Bucket name_** con la siguiente nomenclatura: **_data-migration-lab-su-nombre_** (ejemplo: **_data-migration-lab-mariano-rivera_**).
+19. Haga click en **_Services_** y posteriormente seleccione el servicio de [**_S3_**](https://s3.console.aws.amazon.com/) el cual se encuentra bajo la categoría de **_Storage_** (**_https://s3.console.aws.amazon.com/_**).
+20. Haga click en **_+ Create bucket_**.
+21. Ingrese un nombre para su bucket en **_Bucket name_** con la siguiente nomenclatura: 
+**_data-migration-lab-su-nombre_** (ejemplo: **_data-migration-lab-mariano-rivera_**).
+22. En el menú desplegable de **_Region_** seleccione **_US East (Ohio)_**.
 23. Haga click en **_Create_**.
+
+![Create bucket](images/createbucket.png)
+
 24. Guarde el nombre de su bucket en un editor de texto ya que lo utilizará más tarde.
 
 
 ### 4. Configuración de la instancia cliente
 
 25. Haga click en **_Services_** y posteriormente seleccione el servicio de **_EC2_** el cual se encuentra bajo la categoría de **_Compute_**.
-26. Cambie a la región de **_N. Virginia_** en la esquina superior derecha de la consola de AWS.
-27. Haga click en **_Running instances_**.
-28. Seleccione la casilla que se encuentra a lado de la instancia **_Client Instance_**.
-29. Haga click en **_Connect_**.
-30. Seleccione **_EC2 Instance Connect (browser-based SSH connection)_** y haga click en **_Connect_** para tener acceso a la instancia cliente vía SSH por medio del navegador web.
+26. Haga click en **_Running instances_**.
+27. Seleccione la casilla que se encuentra a lado de la instancia **_Client Instance_**.
+28. Haga click en **_Connect_**.
+29. Seleccione **_EC2 Instance Connect (browser-based SSH connection)_** y haga click en **_Connect_** para tener acceso a la instancia cliente vía SSH por medio del navegador web.
 
 ![Connect to Linux Server](images/connect.png)
 ![EC2 CLI](images/ec2cli.png)
 
 **_*Nota._** Si por alguna razón no pudo conectarse a la instancia por medio de SSH via el navegador web (500 Server error), intente la opción de A standalone SSH client siguiendo las instrucciones que ahí se indican (terminal para usuarios Mac/Linux, putty para usuarios Windows).
 
-31. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **_NFSInstancePrivateIP_** por la dirección IP correspondiente que guardó en el editor de texto:
+30. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **_NFSInstancePrivateIP_** por la dirección IP correspondiente que guardó en el editor de texto:
 
 ```
 sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs ~/nas
@@ -78,7 +81,7 @@ sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs ~/nas
 
 Este comando montará una carpeta compartida por la instancia que funge como servidor NFS.
 
-32. Proceda a explorar el contenido de esta carpeta con los siguientes comandos:
+31. Proceda a explorar el contenido de esta carpeta con los siguientes comandos:
 
 Para acceder a la carpeta
 ```
