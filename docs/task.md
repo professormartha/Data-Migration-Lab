@@ -1,10 +1,10 @@
-Una vez que su agente ha sido creado, debe crear una tarea de migración (task) en donde definirá el origen y destino de los datos que va a migrar.
+Una vez que su agente ha sido creado, debe crear una tarea (task) en donde definirá el origen y destino de los datos que va a migrar.
 
 1. Haga clck en **_Tasks_** en el menú lateral de la izquierda.
 2. Haga click en **_Create task_**.
 3. En **_Location_** type seleccione **_Network File System (NFS)_**.
 4. En **_Agents_** seleccione el agente de DataSync que acaba de crear.
-5. En **_NFS Server_** ingrese la IP de **_NFSInstancePublicIP_** que guardó en el editor de texto.
+5. En **_NFS Server_** ingrese la IP del parámetro **_NFSInstancePublicIP_** que guardó en el editor de texto.
 6. En **_Mount path_** ingrese la siguiente ruta:
 
 ```

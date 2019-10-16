@@ -26,7 +26,7 @@ nav:
     - Preparación del ambiente: setup.md
     - AWS DataSync:
       - Agente DataSync: datasyncagent.md
-      - Tarea de migración: task.md
+      - Tarea (Task): task.md
       - Migrar datos: migration.md
     - AWS Storage Gateway:
       - Creación de File Gateway: gateway.md

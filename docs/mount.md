@@ -21,7 +21,7 @@ sudo su
 8. Para montar su file share debe crear un directorio en donde montarlo; para esto jecute el siguiente comando:
 
 ```
-mkdir ~/gateway
+mkdir /home/ec2-user/gateway
 ```
 
 9. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por **_/home/ec2-user/gateway_**. El comando deberá quedar algo así:
@@ -31,15 +31,15 @@ mkdir ~/gateway
 10. Lance el siguiente comando para explorar el contenido de la carpeta compartida que acaba de montar (si llevó a cabo los módulos de DataSync encontrará los archivos que migró anteriormente):
 
 ```
-ls ~/gateway
+ls /home/ec2-user/gateway
 ```
 
 10. Dentro de la ruta en la que se encuentra hay un directorio llamado **baseball-data-2018** que contiene archivos .csv con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al file share que acaba de montar:
 
 ```
-cp -rv ~/baseball-data-2018/ ~/gateway/
+cp -rv /home/ec2-user/baseball-data-2018/ /home/ec2-user/gateway/
 ```
 
 12.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
 13.	Ingrese al bucket que creó para este laboratorio.
-13.	Verifique que los archivos que copió se encuentran en el bucket.
+13.	Verifique que el directorio  que copió se encuentra en el bucket.

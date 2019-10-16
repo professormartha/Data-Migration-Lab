@@ -73,6 +73,6 @@ Para enlistar el contenido
 ls ~/nas
 ```
 
-En esta carpeta compartida encontrará información histórica con estadísticas de baseball de los últimos 20 años la cual migrará al servicio de S3 utilizando DataSync y podrá acceder con el servicio de Storage Gateway.
+En esta carpeta compartida encontrará información estadística de baseball de los últimos 20 años. En este laboratorio usted migrará esta información histórica al servicio de S3 utilizando DataSync y posteriormente podrá consultar esta misma información con el servicio de Storage Gateway.
 
 ![EC2 CLI](images/explorenfs.png)
