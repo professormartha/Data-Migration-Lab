@@ -1,6 +1,6 @@
 ### 1. Creación de Key Pair
 
-Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acceder a la instancia que creará más adelante y a la cual le mostrará el file share que creará con el servicio de Storage Gateway.
+Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acceder a las instancias que creará más adelante.
 
 1. Asegúrese de estar trabajando en la región de **_N. Virgina_**. Esto lo puede verificar en el menú desplegable que se encuentra en la esquina superior derecha de la consola de AWS.
 2. Haga click en **_Services_** y posteriormente seleccione el servicio de [**_EC2_**](https://console.aws.amazon.com/ec2/) el cual se encuentra bajo la categoría de **_Compute_** - **_https://console.aws.amazon.com/ec2/_**.
@@ -15,7 +15,7 @@ Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acce
 
 ### 2. Despliegue de plantilla de CloudFormation
 
-A continuación, va a desplegar una plantilla de CloudFormation que creará las siguientes instancias EC2:
+A continuación, desplegará una plantilla de CloudFormation que creará las siguientes instancias EC2:
 
 - **Instancia NFS**
     - Esta instancia comparte una carpeta en la red por medio de NFS. En esta carpeta se encuentra la información que migrará a S3 utilizando DataSync.
@@ -23,7 +23,6 @@ A continuación, va a desplegar una plantilla de CloudFormation que creará las 
     - En esta instancia usted montará la carpeta compartida de la instancia NFS y la carpeta compartida que creará utilizando el servicio de Storage Gateway.
 - **Agente de DataSync**
 - **Storage Gateway**
-
 
 8. Haga click en **_Services_** y después en [**_CloudFormation_**](https://console.aws.amazon.com/cloudformation/) que se encuentra bajo la categoría de **_Management & Governance_** (también puede teclear CloudFormation en el campo de búsqueda) - **_https://console.aws.amazon.com/cloudformation/_**.
 9. Haga click en **_Create stack_**.
@@ -47,7 +46,7 @@ http://data-migration.oldschool.cloud/data-migration-lab.yaml
 
 ### 3. Creación de bucket de S3
 
-A continuación, debe crear un bucket de S3 que nos servirá para almacenar la información que migremos utilizando los Servicios de DataSync y Storage Gateway.
+En los siguientes pasos creará un bucket de S3 en donde almacenará la información que migre utilizando los servicios de DataSync y Storage Gateway.
 
 19. Cambie a la región de **_Ohio_** en la esquina superior derecha de la consola de AWS.
 20. Haga click en **_Services_** y posteriormente seleccione el servicio de [**_S3_**](https://s3.console.aws.amazon.com/) el cual se encuentra bajo la categoría de **_Storage_** (**_https://s3.console.aws.amazon.com/_**).
