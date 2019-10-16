@@ -1,6 +1,6 @@
 Una vez que su agente ha sido creado, debe crear una tarea (task) en donde definirá el origen y destino de los datos que va a migrar.
 
-1. Haga clck en **_Tasks_** en el menú lateral de la izquierda.
+1. Haga click en **_Tasks_** en el menú lateral de la izquierda.
 2. Haga click en **_Create task_**.
 3. En **_Location type_** seleccione **_Network File System (NFS)_**.
 4. En **_Agents_** seleccione el agente de DataSync que acaba de crear.
