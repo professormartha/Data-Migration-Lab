@@ -4,10 +4,10 @@
 4. Haga click en **_Create agent_**.
 5. En **_Service Endpoints_** seleccione **_Public service endpoints in US East (N. Virginia)_**.
 6. En el campo de **_Agent address_** ingrese la dirección IP del parámetro **_DataSyncAgentIP_** que guardó en el editor de texto.
-7. Haga click en **_Get key_**
 
 ![Get Key](images/getkey.png)
 
+7. Haga click en **_Get key_**
 8. En el campo de **_Agent name_** ingrese el nombre de su agente (**_DataSync Agent - Lab_**)
 9. Haga click en **_Create agent_**.
 10. Proceda al siguiente módulo.
