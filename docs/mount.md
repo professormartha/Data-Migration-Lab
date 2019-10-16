@@ -28,10 +28,10 @@ mkdir gateway
 
 > mount -t nfs -o nolock,hard 172.31.34.218:/file-gateway-lab-su-bucket /home/ec2-user/gateway
 
-10. Dentro de la ruta en la que se encuentra hay un directorio llamado **_baseballdatabank-2019.2_** que contiene archivos .csv con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al file share que acaba de montar:
+10. Dentro de la ruta en la que se encuentra hay un directorio llamado **baseball-data-2018** que contiene archivos .csv con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al file share que acaba de montar:
 
 ```
-cp -rv /home/ec2-user/baseballdatabank-2019.2/* /home/ec2-user/gateway/
+cp -rv /home/ec2-user/baseball-data-2018/ /home/ec2-user/gateway/
 ```
 
 12.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).

@@ -23,7 +23,7 @@ Una vez que su agente ha sido creado, debe crear una tarea de migración (task) 
 11. Haga click en **_Next_**.
 12. En la siguiente pantalla deje los valores predeterminados y haga click en **_Next_**.
 13. Haga click en **_Create task_**.
-14. Haga clck en **_Tasks_** en el menú lateral de la izquierda. Podrá ver que el status de la tarea es **_Creating_**.
+14. Haga click en **_Tasks_** en el menú lateral de la izquierda. Podrá ver que el status de la tarea es **_Creating_**.
 
 ![Creating task](images/taskcreating.png)
 

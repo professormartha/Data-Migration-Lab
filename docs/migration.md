@@ -7,7 +7,9 @@
 
 4. Haga click en **_Start_**. Podrá ver como el status de su tarea cambió a **_Running_**. Espere unos minutos a que la tarea de migración se ejecute y el status de su tarea cambie de nuevo a **_Available_**.
 
-5. Una vez que el status de su tarea cambie de nuevo a **_Available_** haga click en **_History_** bajo **_Tasks_** en el menú lateral de la izquierda. Aquī podrá corroborar que su tarea de migración se ejecutó satisfactoriamente.
+![Task running](images/taskrunning.png)
+
+5. Una vez que el status de su tarea cambie de nuevo a **_Available_** haga click en **_History_** bajo **_Tasks_** en el menú lateral de la izquierda. Aquí podrá corroborar que su tarea de migración se ejecutó satisfactoriamente.
 
 ![Task history](images/taskhistory.png)
 
