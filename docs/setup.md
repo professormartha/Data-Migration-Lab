@@ -59,9 +59,9 @@ En los siguientes pasos creará un bucket de S3 en donde almacenará la informac
 ### 4. Configuración de la instancia cliente
 
 25. Haga click en **_Services_** y posteriormente seleccione el servicio de **_EC2_** el cual se encuentra bajo la categoría de **_Compute_**.
-26. Cambie a la región de **_Ohio_** en la esquina superior derecha de la consola de AWS.
+26. Cambie a la región de **_N. Virginia_** en la esquina superior derecha de la consola de AWS.
 27. Haga click en **_Running instances_**.
-28. Seleccione la casilla que se encuentra a lado de la instancia **_Linux Server_**.
+28. Seleccione la casilla que se encuentra a lado de la instancia **_Client Instance_**.
 29. Haga click en **_Connect_**.
 30. Seleccione **_EC2 Instance Connect (browser-based SSH connection)_** y haga click en **_Connect_** para tener acceso a la instancia cliente vía SSH por medio del navegador web.
 
@@ -73,16 +73,16 @@ En los siguientes pasos creará un bucket de S3 en donde almacenará la informac
 31. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **_NFSInstancePrivateIP_** por la dirección IP correspondiente que guardó en el editor de texto:
 
 ```
-sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs /home/ec2-user/nas
+sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs ~/nas
 ```
 
-Este comando va a montar una carpeta compartida por la instancia que funge como servidor NFS.
+Este comando montará una carpeta compartida por la instancia que funge como servidor NFS.
 
 32. Proceda a explorar el contenido de esta carpeta con los siguientes comandos:
 
 Para acceder a la carpeta
 ```
-cd /home/ec2-user/nas
+cd ~/nas
 ```
 
 Para enlistar el contenido
