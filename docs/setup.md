@@ -52,7 +52,7 @@ En los siguientes pasos creará un bucket de S3 en donde almacenará la informac
 20. Haga click en **_+ Create bucket_**.
 21. Ingrese un nombre para su bucket en el campo de **_Bucket name_** con la siguiente nomenclatura: 
 **_data-migration-lab-su-nombre_** (ejemplo: **_data-migration-lab-mariano-rivera_**).
-22. En el menú desplegable de **_Region_** seleccione **_US East (Ohio)_**.
+22. En el menú desplegable de **_Region_** asegúrese que la región **_US East (N. Virginia)_**.
 23. Haga click en **_Create_**.
 
 ![Create bucket](images/createbucket.png)
