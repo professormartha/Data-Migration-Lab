@@ -36,13 +36,13 @@ mkdir /home/ec2-user/gateway
 ls /home/ec2-user/gateway
 ```
 
-11. Dentro de la ruta en la que se encuentra hay un directorio llamado **baseball-data-2018** que contiene archivos .csv con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al file share que acaba de montar:
+11. Dentro de la ruta en la que se encuentra hay un directorio llamado **_baseball-data-2018_** que contiene archivos .csv con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al file share que acaba de montar:
 
 ```
 cp -rv /home/ec2-user/baseball-data-2018/ /home/ec2-user/gateway/
 ```
 
-12. Ejecute de nuevo el comando **_ls /home/ec2-user/gateway_** para corroborar que el directorio **baseball-data-2018** se copió correctamente al file share.
+12. Ejecute de nuevo el comando **_ls /home/ec2-user/gateway_** para corroborar que el directorio **_baseball-data-2018_** se copió correctamente al file share.
 
 ![Transfered data CLI](images/transfereddatacli.png)
 
