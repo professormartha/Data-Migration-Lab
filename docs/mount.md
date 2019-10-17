@@ -1,7 +1,7 @@
 1. Haga click en **_Services_** y posteriormente seleccione el servicio de [**_EC2_**](https://console.aws.amazon.com/ec2/) el cual se encuentra bajo la categoría de Compute (**_https://console.aws.amazon.com/ec2/_**) .
 2. Cambie a la región de **_N. Virginia_** en la esquina superior derecha.
 3. Haga click en **_Running instances_**.
-4. Seleccione la casilla que se encuentra a lado de la instancia **_Amazon Linux 2 - SGW Lab_**.
+4. Seleccione la casilla que se encuentra a lado de la instancia **_Client Instance_**.
 5. Haga click en **_Connect_**.
 6. Seleccione **_EC2 Instance Connect (browser-based SSH connection)_** y haga click en **_Connect_** para tener acceso a su instancia vía SSH por medio del navegador web.
 
