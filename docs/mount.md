@@ -46,8 +46,16 @@ cp -rv /home/ec2-user/baseball-data-2018/ /home/ec2-user/gateway/
 
 ![Transfered data CLI](images/transfereddatacli.png)
 
-13.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
-14.	Ingrese al bucket que creó para este laboratorio.
-15.	Verifique que el directorio que copió se encuentra en el bucket.
+13. Ejecute el siguiente comando para ver el contenido del directorio que copió:
+
+```
+ls /home/ec2-user/gateway/baseball-data-2018
+```
+
+![CSV Files](images/csvfiles.png)
+
+14.	Haga click en **_Services_** y después en [**_S3_**](https://console.aws.amazon.com/storagegateway/).
+15.	Ingrese al bucket que creó para este laboratorio.
+16.	Verifique que el directorio que copió se encuentra en el bucket.
 
 ![Transfered data S3](images/transfereddatas3.png)
