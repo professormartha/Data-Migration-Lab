@@ -16,7 +16,7 @@ Una vez que su agente ha sido creado, debe crear una tarea (task) en donde defin
 7. Haga click en **_Next_**.
 8. En **_Location type_** seleccione **_Amazon S3 bucket_**.
 9. En **_S3 bucket_** seleccione el bucket que creó anteriormente.
-10. En **_IAM role_** haga click en **_Autogenerate_** para generar un rol que permita a DataSync interactur con su bucket.
+10. En **_IAM role_** haga click en **_Autogenerate_** para generar un rol que permita a DataSync interactuar con su bucket.
 
 ![New Task Target](images/newtasktarget.png)
 
@@ -27,6 +27,6 @@ Una vez que su agente ha sido creado, debe crear una tarea (task) en donde defin
 
 ![Creating task](images/taskcreating.png)
 
-15. Espere unos minutos a que el status de la tarea cambie a **_Available_** y proceda al siguiente módulo.
+15. Espere unos minutos a que el status de la tarea cambie a **_Available_** y proceda al [**_siguiente módulo_**](http://data-migration.oldschool.cloud/transfer/).
 
 ![Task available](images/taskavailable.png)

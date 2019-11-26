@@ -17,3 +17,5 @@
 7. Haga click en el bucket que creó para este laboratorio. Podrá corroborar que los datos se migraron existosamente; verá algo así:
 
 ![Data migrated](images/datamigrated.png)
+
+8. Proceda al [**_siguiente módulo_**](http://data-migration.oldschool.cloud/gateway/)

@@ -18,3 +18,5 @@
 15.	Haga click en **_Save_**.
 
 ![Cache](images/cache.png)
+
+16. Proceda al [**_siguiente módulo_**](http://data-migration.oldschool.cloud/fileshare/)

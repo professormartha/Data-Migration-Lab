@@ -16,3 +16,5 @@
 13. Copie las instrucciones para conectarse a su file share desde una máquina **_Linux_** y guárdelas en un editor de texto ya que las utilizará más adelante.
 
 ![Outputs](images/onlinux.png)
+
+14. Proceda al [**_siguiente módulo_**](http://data-migration.oldschool.cloud/mount/)
